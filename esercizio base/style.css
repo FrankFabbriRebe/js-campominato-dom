@@ -47,6 +47,7 @@ main    {
     aspect-ratio: 1/1;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .square {
@@ -55,6 +56,20 @@ main    {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.perso {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    background-color: red;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.active {
+    display: block;
 }
 
 .clicked {
