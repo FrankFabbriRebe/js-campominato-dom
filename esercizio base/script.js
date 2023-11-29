@@ -59,18 +59,28 @@ buttonPlay.addEventListener("click",
 
         }
 
+        // variabile selected square
+        // let selectedSquare;
+
         // selezione degli square con le bombe
         for (let i = 0; i < 16; i++) {
+            // generazione random index per arraySquare
+            const randomSquareIndex = randomNumbMinMax(0, 99);
 
-            // generazione random index per square array
-            const randomSquareIndex = randomNumbMinMax (0, 99);
-            // console.log(randomSquareIndex);
-
-            // selezione elemento da square array in ordine random
+            // selezione elemento da arraySquare in ordine random
             const selectedSquare = squareArray[randomSquareIndex];
             console.log(selectedSquare);
 
+            // al click degli square con le bombe
+            selectedSquare.addEventListener("click", function() {
+                // aggiunta classe bomba
+                selectedSquare.classList.add("bomba");
+                console.log("Bomba cliccata!");
+            });
         }
+
+
+       
         
     }
 )
@@ -110,6 +120,9 @@ function randomNumbMinMax (min, max) {
 // creo un array con gli elementi square
 // creo un numero random da 0 a 99
 // associo numero random ad squareArray[numero random];
+
+
+
 
 
 
