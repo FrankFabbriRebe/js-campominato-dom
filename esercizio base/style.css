@@ -11,6 +11,10 @@ header  {
     justify-content: space-between;
 }
 
+.hidden {
+    display: none;
+}
+
 .logo   {
     display: flex;
     align-items: center;
