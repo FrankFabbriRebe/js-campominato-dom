@@ -1,9 +1,6 @@
 // selezione bottone play
 const buttonPlay = document.querySelector(".play")
 
-// array elementi square
-const squareArray = [];
-
 // al click del bottone play appare la griglia
 buttonPlay.addEventListener("click", 
     function()  {
@@ -22,6 +19,9 @@ buttonPlay.addEventListener("click",
 
         // append al main
         main.append(container);
+
+        // array elementi square
+        const squareArray = [];
 
         // ciclo for per creare 100 quadrati
         for (let i = 1; i <= 100; i++) {
@@ -73,17 +73,26 @@ buttonPlay.addEventListener("click",
 
             // al click degli square con le bombe
             selectedSquare.addEventListener("click", function() {
+
+                // selezione div che dice che hai perso
+                const haiPerso = document.querySelector(".perso");
+
                 // aggiunta classe bomba
                 selectedSquare.classList.add("bomba");
-                console.log("Bomba cliccata!");
+
+                // aggiunta classe
+                haiPerso.classList.add("active");
+                
+                
+
             });
         }
-
-
-       
-        
+ 
     }
 )
+
+
+///// FUNZIONI /////
 
 // funzione per creare un array di numeri in ordine casuale in un range da 1 a 16
 function genArrayRandomNumb (minNum, maxNum, lengthArray) {
@@ -112,18 +121,3 @@ function randomNumbMinMax (min, max) {
   
     return randomNum;
 }
-
-
-
-// ISTRUZIONI GENERALI
-
-// creo un array con gli elementi square
-// creo un numero random da 0 a 99
-// associo numero random ad squareArray[numero random];
-
-
-
-
-
-
-
