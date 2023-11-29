@@ -47,8 +47,6 @@ buttonPlay.addEventListener("click",
             // append allo square
             square.append(number);
 
-           
-
             // al click della cella cambia colore di sfondo e stampa in console il risultato
             square.addEventListener("click", 
                 function()  {
@@ -61,8 +59,6 @@ buttonPlay.addEventListener("click",
 
                     // conteggio dei click
                     click++;
-
-                    // console.log(contaClick);
 
                 }
             )
@@ -90,7 +86,12 @@ buttonPlay.addEventListener("click",
                 // aggiunta classe
                 haiPerso.classList.add("active");
 
-                console.log("Hai perso! Punteggio: " + click);
+                // console.log("Hai perso! Punteggio: " + click);
+
+                const contaClick = document.createElement ("h2");
+                contaClick.append(click);
+
+                haiPerso.append(contaClick);
                 
             });
         }
