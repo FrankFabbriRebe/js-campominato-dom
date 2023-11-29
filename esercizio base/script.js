@@ -5,6 +5,9 @@ const buttonPlay = document.querySelector(".play")
 buttonPlay.addEventListener("click", 
     function()  {
 
+        // aggiunta classe
+        buttonPlay.classList.add("hidden");
+
         // creazione container
         const container = document.createElement("div");
 
