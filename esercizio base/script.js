@@ -1,6 +1,9 @@
 // selezione bottone play
 const buttonPlay = document.querySelector(".play")
 
+// array elementi square
+const squareArray = [];
+
 // al click del bottone play appare la griglia
 buttonPlay.addEventListener("click", 
     function()  {
@@ -22,13 +25,16 @@ buttonPlay.addEventListener("click",
 
         // call function per generazione array numeri in ordine casuali
         const newArray = genArrayRandomNumb(1, 16, 16);
-        console.log(newArray);
+        // console.log(newArray);
 
         // ciclo for per creare 100 quadrati
         for (let i = 1; i <= 100; i++) {
 
             // creazione quadrati interni
             const square = document.createElement("div");
+
+            // push elemento square all'interno di squareArray
+            squareArray.push(square);
 
             // aggiunta classe 
             square.classList.add("square");
@@ -57,10 +63,25 @@ buttonPlay.addEventListener("click",
 
         }
 
+        // console.log(squareArray);
+
+        for (let i = 0; i < 16; i++) {
+
+            // generazione random index per square array
+            const randomSquareIndex = randomNumbMinMax (1, 100);
+            // console.log(randomSquareIndex);
+
+            // selezione elemento da square array in ordine random
+            const selectedSquare = squareArray[randomSquareIndex];
+            console.log(selectedSquare);
+
+        }
+        
+        
     }
 )
 
-// generezaione di un array di numeri in ordine casuale in un range da 1 a 16
+// funzione per creare un array di numeri in ordine casuale in un range da 1 a 16
 function genArrayRandomNumb (minNum, maxNum, lengthArray) {
 
     // creazione array da popolare
@@ -87,3 +108,15 @@ function randomNumbMinMax (min, max) {
   
     return randomNum;
 }
+
+
+
+// ISTRUZIONI GENERALI
+
+// creo un array con gli elementi square
+// creo un numero random da 0 a 99
+// associo numero random ad squareArray[numero random];
+
+
+
+
