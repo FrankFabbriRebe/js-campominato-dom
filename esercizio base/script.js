@@ -23,10 +23,6 @@ buttonPlay.addEventListener("click",
         // append al main
         main.append(container);
 
-        // call function per generazione array numeri in ordine casuali
-        const newArray = genArrayRandomNumb(1, 16, 16);
-        // console.log(newArray);
-
         // ciclo for per creare 100 quadrati
         for (let i = 1; i <= 100; i++) {
 
@@ -56,19 +52,18 @@ buttonPlay.addEventListener("click",
                     square.classList.add("clicked");
 
                     // stampa in console il numero
-                    console.log(i);
+                    // console.log(i);
 
                 }
             )
 
         }
 
-        // console.log(squareArray);
-
+        // selezione degli square con le bombe
         for (let i = 0; i < 16; i++) {
 
             // generazione random index per square array
-            const randomSquareIndex = randomNumbMinMax (1, 100);
+            const randomSquareIndex = randomNumbMinMax (0, 99);
             // console.log(randomSquareIndex);
 
             // selezione elemento da square array in ordine random
@@ -76,7 +71,6 @@ buttonPlay.addEventListener("click",
             console.log(selectedSquare);
 
         }
-        
         
     }
 )
