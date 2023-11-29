@@ -20,6 +20,10 @@ buttonPlay.addEventListener("click",
         // append al main
         main.append(container);
 
+        // call function per generazione array numeri in ordine casuali
+        const newArray = genArrayRandomNumb(1, 16, 16);
+        console.log(newArray);
+
         // ciclo for per creare 100 quadrati
         for (let i = 1; i <= 100; i++) {
 
@@ -55,3 +59,31 @@ buttonPlay.addEventListener("click",
 
     }
 )
+
+// generezaione di un array di numeri in ordine casuale in un range da 1 a 16
+function genArrayRandomNumb (minNum, maxNum, lengthArray) {
+
+    // creazione array da popolare
+    const arrayGen = [];
+    
+    // ciclo per poolare l'aaray
+    while (arrayGen.length < lengthArray) {
+        // generazione numero random tra min e max tramite funzione
+        let newNum = randomNumbMinMax (minNum, maxNum);
+        // se il numero generato non è già presente lell'array
+        if (!arrayGen.includes(newNum)) {
+            // allora push nell'array
+            arrayGen.push(newNum);
+        }
+    }
+
+    return arrayGen;
+
+}
+
+// funzione per generare numero random tra min e max tramite funzione
+function randomNumbMinMax (min, max) {
+    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  
+    return randomNum;
+}
