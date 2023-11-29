@@ -23,6 +23,9 @@ buttonPlay.addEventListener("click",
         // array elementi square
         const squareArray = [];
 
+         // conteggio dei click
+         let click = 0;
+         
         // ciclo for per creare 100 quadrati
         for (let i = 1; i <= 100; i++) {
 
@@ -44,6 +47,8 @@ buttonPlay.addEventListener("click",
             // append allo square
             square.append(number);
 
+           
+
             // al click della cella cambia colore di sfondo e stampa in console il risultato
             square.addEventListener("click", 
                 function()  {
@@ -54,13 +59,15 @@ buttonPlay.addEventListener("click",
                     // stampa in console il numero
                     // console.log(i);
 
+                    // conteggio dei click
+                    click++;
+
+                    // console.log(contaClick);
+
                 }
             )
 
         }
-
-        // variabile selected square
-        // let selectedSquare;
 
         // selezione degli square con le bombe
         for (let i = 0; i < 16; i++) {
@@ -82,9 +89,9 @@ buttonPlay.addEventListener("click",
 
                 // aggiunta classe
                 haiPerso.classList.add("active");
-                
-                
 
+                console.log("Hai perso! Punteggio: " + click);
+                
             });
         }
  
